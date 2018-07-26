@@ -16,6 +16,7 @@ function main(){
   SLL.insertLast('squirrel');
   SLL.insertLast('Apollo');  
   SLL.insertBefore('Damian', 'Helo');
+  SLL.insertAfter('Brian', 'Starbuck');
   //SLL.remove('squirrel');
   console.log('runs');
   //console.log(SLL.find('squirrel'));

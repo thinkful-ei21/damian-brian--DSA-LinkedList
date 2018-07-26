@@ -92,6 +92,24 @@ class LinkedList {
     return true;
   }
 
+  insertAfter(item, key){
+      
+      let currNode = this.head;
+    //   if(this.head.value === key){
+    //       return this.insertFirst(item);
+    //   }
+      while(currNode !== null && currNode.value !== key){
+          currNode = currNode.next;
+      }
+      
+      if (currNode === null){
+          console.log('never found a key')
+          return false;
+      }
+      currNode.next = new _Node(item,currNode.next);
+      return true;
+  }
+
 
 
 
