@@ -71,6 +71,30 @@ class LinkedList {
     }
     previousNode.next = currNode.next;
   }
+
+  insertBefore(item, key){
+    // if head = key then replace this value
+    let currNode = this.head;
+    let previousNode = this.head;
+    if(this.head.value === key){
+      return this.insertFirst(item);
+    }
+      
+    while(currNode !== null && currNode.value !== key){
+      previousNode = currNode;
+      currNode = currNode.next;
+      
+    }if (currNode === null){
+      console.log('never found key');
+      return false; 
+    }
+    previousNode.next = new _Node(item,currNode);
+    return true;
+  }
+
+
+
+
 }
 
 module.exports = LinkedList;
