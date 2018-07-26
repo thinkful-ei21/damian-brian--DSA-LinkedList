@@ -4,7 +4,7 @@ const _Node = require('./nodes.js');
 
 class LinkedList {
   constructor(){
-    this.head;
+    this.head = null;
   }
 
   insertFirst(item){
@@ -14,8 +14,12 @@ class LinkedList {
   insertLast(item){
     if(this.head === null){
       this.insertFirst(item);
-    }else{
+      
+    }
+    else{
+      
       let tempNode = this.head;
+      
       while(tempNode.next !== null){
         tempNode = tempNode.next;
       }
@@ -43,28 +47,30 @@ class LinkedList {
 
   remove(item){
     //if the list is empty
-      if (!this.head){
-          return null;
-      }
+    if (!this.head){
+      return null;
+    }
     //if the node to be removed is head, make the next node head
     if(this.head.value === item){
-        this.head = this.head.next;
-        return;
+      this.head = this.head.next;
+      return;
     }
-   //start at the head
-   let currNode = this.head;
-   //keep track of previous
-   let previousNode = this.head;
+    //start at the head
+    let currNode = this.head;
+    //keep track of previous
+    let previousNode = this.head;
    
-   while ((currNode !== null) && (currNode.value !== item)) {
-       //save the previous node
-       previousNode = currNode;
-       currNode = currNode.next;
-   }
-   if(currNode === null){
-       console.log('item not found');
-       return;
-   }
-   previousNode.next = currNode.next;
+    while ((currNode !== null) && (currNode.value !== item)) {
+      //save the previous node
+      previousNode = currNode;
+      currNode = currNode.next;
+    }
+    if(currNode === null){
+      console.log('item not found');
+      return;
+    }
+    previousNode.next = currNode.next;
   }
 }
+
+module.exports = LinkedList;
