@@ -94,23 +94,49 @@ class LinkedList {
 
   insertAfter(item, key){
       
-      let currNode = this.head;
+    let currNode = this.head;
     //   if(this.head.value === key){
     //       return this.insertFirst(item);
     //   }
-      while(currNode !== null && currNode.value !== key){
-          currNode = currNode.next;
-      }
+    while(currNode !== null && currNode.value !== key){
+      currNode = currNode.next;
+    }
       
-      if (currNode === null){
-          console.log('never found a key')
-          return false;
-      }
-      currNode.next = new _Node(item,currNode.next);
-      return true;
+    if (currNode === null){
+      console.log('never found a key');
+      return false;
+    }
+    currNode.next = new _Node(item,currNode.next);
+    return true;
   }
+  
+  // insertAt(item, key){
+  //   let foundkey = find(key);
+  //   let currNode = this.head;
+    
 
+  //   while(currNode !== foundkey){
+      
+  //   }
 
+  // }
+
+  size(){
+    let currenthead = this.head.next;
+    let increment = 0;
+
+    
+    if(currenthead !== null){
+      
+      increment = increment + 1;
+      console.log(`${increment}`);
+    } if (currenthead === null){
+      return null;
+    }
+    console.log('stuff');
+    console.log(`${increment}`);
+    return increment;
+  }
 
 
 }
